@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCA Talent - Strategic Staffing in the Philippines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2A0944;
+            --secondary: #FF6B6B;
+            --accent: #fff;
+            --text: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, var(--primary), #1A0644);
+            color: var(--accent);
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background: var(--secondary);
+            color: var(--accent);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .services {
+            display: flex;
+            overflow-x: auto;
+            padding: 2rem 0;
+        }
+
+        .service-card {
+            flex: 0 0 300px;
+            margin: 1rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .process {
+            position: relative;
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .process h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .process-step-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .step-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact {
+            background: var(--primary);
+            color: var(--accent);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 5px;
+            background: #fff;
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--accent);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services {
+                flex-direction: column;
+            }
+
+            .service-card {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Staff your team with specialized talent in the Philippines</h1>
+            <p>Data Entry and other competencies start at $3/hour</p>
+            <button class="cta-button" onclick="openEmail('mark@rcatalent.com')">Let's Build Your Dream Team</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>About Us</h2>
+        <p>RCA Talent specializes in connecting small businesses with high-performing talent in the Philippines. Talent
+            starts as low as $3/hour.</p>
+    </section>
+
+    <section class="services">
+        <div class="service-card">
+            <h3>Team Staffing Solutions</h3>
+            <p>Build large, low-cost teams to support your ambitions</p>
+        </div>
+        <div class="service-card">
+            <h3>Specialized Talent Sourcing</h3>
+            <p>Source high-quality professionals from industry and top universities in the Philippines</p>
+        </div>
+        <div class="service-card">
+            <h3>Competitive Offshore Bidding</h3>
+            <p>Build out an RFI/RFP for your project and collect bids from suppliers across South-East Asia</p>
+        </div>
+        <div class="service-card">
+            <h3>Supplier Benchmarking</h3>
+            <p>Benchmark your suppliers vs best-in-class English-speaking firms in Asia</p>
+        </div>
+    </section>
+
+    <section class="process">
+        <h2>Our Process</h2>
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="process-step-content">
+                    <div class="step-icon">🎯</div>
+                    <h3 class="step-title">Goal Alignment</h3>
+                    <p class="step-description">1. Initial consultation to establish key performance indicators and
+                        objectives</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-content">
+                    <div class="step-icon">🔍</div>
+                    <h3 class="step-title">Present Project Plan & Category Benchmark</h3>
+                    <p class="step-description">2. Comprehensive project timeline and category analysis presentation</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-content">
+                    <div class="step-icon">📈</div>
+                    <h3 class="step-title">Sourcing and Collecting Rates</h3>
+                    <p class="step-description">3. Internal candidate sourcing and qualification process</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-content">
+                    <div class="step-icon">🤝</div>
+                    <h3 class="step-title">Pick Your Team</h3>
+                    <p class="step-description">4. Shortlisted candidate presentation for client review and selection
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Ready to Transform Your Business?</h2>
+        <form class="contact-form" action="mailto:mark@rcatalent.com">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="cta-button">Get Started</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 RCA Talent. Build your business faster, with RCA.</p>
+    </footer>
+
+    <script>
+    
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        function openEmail(emailAddress) {
+            window.location.href = 'mailto:' + emailAddress;
+        }
+    </script>
+</body>
+
+</html>
